@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+
+	<param name="/cam3d/driver/data_skip" type="int" value="2"/>
+	<param name="/cam3d/driver/depth_registration" type="bool" value="true"/>
+
+	<include file="$(find openni_launch)/launch/openni.launch">
+		<arg name="camera" value="cam3d"/>
+		<arg name="rgb_frame_id" value="/cam3d_link" />
+		<arg name="depth_frame_id" value="/cam3d_link" />
+    <arg name="publish_tf" value="false" />
+	</include>
+
+</launch>
