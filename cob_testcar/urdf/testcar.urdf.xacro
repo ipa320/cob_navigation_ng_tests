@@ -23,17 +23,17 @@
       </inertial>
 
       <visual>
-        <origin xyz="0 0 0.209" rpy="0 0 0" />  
+        <origin xyz="0 0 0.21" rpy="0 0 0" />  
         <geometry>
-          <box size="0.4 0.2 0.31" />
+          <box size="0.45 0.34 0.42" />
         </geometry> 
         <!--material name="IPA/LightGrey" /-->
       </visual>
 
       <collision>
-        <origin xyz="0 0 0.209" rpy="0 0 0" /> 
+        <origin xyz="0 0 0.21" rpy="0 0 0" /> 
         <geometry>
-        	<box size="0.4 0.2 0.31" />
+        	<box size="0.45 0.34 0.42" />
         </geometry>
       </collision>
       
@@ -41,11 +41,11 @@
 
    <!-- base laser front -->
     <xacro:sick_s300_laser_v0 name="base_laser" parent="base" ros_topic="scan_raw" update_rate="10" min_angle="-2.3562" max_angle="2.3562" >
-      <origin xyz="0.2 0.0 0.1" rpy="0 0 0" />
+      <origin xyz="0.285 0.0 0.16" rpy="0 0 0" />
     </xacro:sick_s300_laser_v0>
 
    <xacro:cob_kinect_v0 name="cam3d" ros_topic="cam3d" parent="base_link">
-     <origin xyz="0.2 0.0 0.3" rpy="-${M_PI/2} 0 -${M_PI/2}" />
+     <origin xyz="0.205 0.0 0.45" rpy="-${M_PI/2} 0 -${M_PI/2}" />
    </xacro:cob_kinect_v0>
 
 </robot>
