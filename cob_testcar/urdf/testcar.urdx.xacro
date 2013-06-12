@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       name="testcar" >
+
+<!-- common stuff -->
+  <include filename="$(find cob_description)/urdf/common.xacro" />
+  <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+
+<!-- sensors -->
+  <include filename="$(find cob_description)/urdf/sensors/kinect.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
+
+  <link name="base_link">
+
+      <inertial>
+        <mass value="40.0" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="9.64" ixy="-0.02" ixz="0.44"
+                 iyy="11.33" iyz="-0.007" izz="3.07" />
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0.209" rpy="0 0 0" />  
+        <geometry>
+          <box size="0.4 0.2 0.31" />
+        </geometry> 
+        <!--material name="IPA/LightGrey" /-->
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0.209" rpy="0 0 0" /> 
+        <geometry>
+        	<box size="0.4 0.2 0.31" />
+        </geometry>
+      </collision>
+      
+    </link>
+
+   <!-- base laser front -->
+    <xacro:sick_s300_laser_v0 name="base_laser" parent="base_link" ros_topic="scan_raw" update_rate="10" min_angle="-2.3562" max_angle="2.3562" >
+      <origin xyz="0.2 0.0 0.1" rpy="0 0 ${-M_PI/4}" />
+    </xacro:sick_s300_laser_v0>
+
+   <xacro:cob_kinect_v0 name="cam3d" ros_topic="cam3d" parent="base_link">
+      <origin xyz="0.4 0.0 0.1" rpy="-${M_PI/2} 0 -${M_PI/2}" />
+   </xacro:cob_kinect_v0>
+
+</robot>
