@@ -3,8 +3,10 @@
 	<!-- send cob urdf to param server -->
    	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_testcar)/urdf/testcar.urdf.xacro'" />
 
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
    	<include file="$(find cob_testcar)/launch/laser.launch" />
-   	<!--include file="$(find cob_testcar)/launch/kinect.launch" /-->
+   	<include file="$(find cob_testcar)/launch/kinect.launch" />
 
 
 </launch>

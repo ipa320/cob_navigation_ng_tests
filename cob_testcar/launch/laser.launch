@@ -2,13 +2,13 @@
 <launch>
 
 	<!-- start laser driver -->
-	<node name="laser_front" pkg="cob_sick_s300" type="cob_sick_s300" respawn="false" output="screen" >
+	<node name="laser" pkg="cob_sick_s300" type="cob_sick_s300" respawn="false" output="screen" >
 		<rosparam command="load" file="$(find cob_testcar)/config/laser.yaml"/>
 		<remap from="laser/scan" to="/scan_raw"/>
 	</node>
 	
 	<!-- laser filter -->
-	<node name="laser_front_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" ns="laser">
+	<node name="laser_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" ns="laser">
 		<remap from="/laser/scan" to="/scan_raw"/>
 		<remap from="/laser/scan_filtered" to="/scan"/>
 	</node>
