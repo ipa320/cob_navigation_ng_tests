@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>ubisense_tests</name>
+  <version>0.1.0</version>
+  <description>tests based on datadumps from ubisense installation</description>
+
+  <maintainer email="aub@ipa.fhg.de">Alexander Bubeck</maintainer>
+
+  <license>Commercial</license>
+
+  <author email="aub@ipa.fhg.de">Alexander Bubeck</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <test_depend>ubi_sense_client</test_depend>
+  <test_depend>rosbag</test_depend>
+
+
+
+  <export>
+  </export>
+</package>

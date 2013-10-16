@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="dump_file" default="$(find ubisense_test)/data/bmw_ubisense_05092013.dat" />
+	<node name="ubi_sense_server" pkg="ubi_sense_client" type="ubi_sense_server.py" output="screen" respawn="true"/>
+	<node name="ubi_sense_transformer" pkg="ubi_sense_client" type="ubi_transform.py" output="screen" respawn="true"/>
+	<node name="rosbag_record_tags" pkg="rosbag" type="record" args="-o /tmp/ubisense_tags /tags /tags_transformed" output="screen"/>   		
+
+	<node name="ubi_sense_test_client" pkg="ubi_sense_client" type="ubi_sense_client_test.py" args="/home/aub/Dropbox/BMW/bmw_ubisense_05092013.dat" output="screen" />
+	
+  	
+
+
+</launch>
