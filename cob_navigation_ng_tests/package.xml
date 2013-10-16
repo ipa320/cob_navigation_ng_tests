@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>cob_navigation_ng_tests</name>
+  <version>0.1.0</version>
+  <description>meta package for navigation tests</description>
+
+  <maintainer email="aub@ipa.fhg.de">Alexander Bubeck</maintainer>
+  <license>Commercial</license>
+
+  <author email="aub@ipa.fhg.de">Alexander Bubeck</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>ubisense_tests</run_depend>
+  
+
+  <export>
+  </export>
+</package>
