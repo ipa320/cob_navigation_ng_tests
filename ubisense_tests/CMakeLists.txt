@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(ubisense_tests)
 
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED rostest)
 
 catkin_package()
 
@@ -14,3 +14,5 @@ catkin_package()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_rostest(launch/test_data_dumps.test)
