@@ -1,0 +1,22 @@
+slam_reset_delay: 3.0
+goals:
+  - name: "student_place"
+    x: 0.761
+    y: -7.638
+    rot: -0.140
+    reset_slam: true
+  - name: "uli_office"
+    x: -14.045
+    y: 12.514
+    rot: -1.196
+    reset_slam: true
+  - name: "stairs"
+    x: -15.391
+    y: -2.503
+    rot: -1.557
+    reset_slam: false
+  - name: "glasdoor"
+    x: -4.879
+    y: -3.516
+    rot: -0.090
+    reset_slam: false

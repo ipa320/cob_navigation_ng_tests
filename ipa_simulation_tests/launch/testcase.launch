@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+<node pkg="ipa_simulation_tests" type="run_tests.py" name="ipa_simulation_tests" output="screen">
+    <param name="tasks_file" value="$(find ipa_simulation_tests)/config/testcase.yaml"/>
+    <param name="result_file" value="$(find ipa_simulation_tests)/result.yaml"/>
+</node>
+
+</launch>

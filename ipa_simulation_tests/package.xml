@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>ipa_simulation_tests</name>
+  <version>0.0.0</version>
+  <description>The ipa_simulation_tests package</description>
+
+  <maintainer email="aub@ipa.fhg.de">Alexander Bubeck</maintainer>
+
+
+  <license>Fraunhofer IPA</license>
+
+  <author email="aub@ipa.fhg.de">Alexander Bubeck</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+</package>
