@@ -90,4 +90,5 @@ if __name__ == "__main__":
       save_mapbase()
     handle.wait()
     print "first pose done"
-    getError(goal["name"])
+    time.sleep(5.0)
+    #getError(goal["name"])
